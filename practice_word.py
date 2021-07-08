@@ -10,20 +10,21 @@ def count_word(text):
         if i in word:
             word[i] += 1
         else:
+            word[i] = 1
+    return word
 
 
 
-
-
-
-
-
-# def max_repeated(words):
+def max_repeated(words):
     max_word = ''
     max_repeated = 0
-    
+    for word, freq in words.items():
+        #todos son mayores hasta que se encuentre lo contrario
+        if freq > max_repeated:
+            max_word = word
+            max_repeated = freq
+    return max_word, max_repeated
 
-
-
-text = "Hola mundo mundo como estas tu y yo y tu"
+text = "Hola mundo mundo mundo como estas tu y yo y tu tu tu tu tu"
 print(count_word(text))
+print(max_repeated(count_word(text)))
